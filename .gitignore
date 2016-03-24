@@ -1,0 +1,8 @@
+.DS_Store*
+.vagrant
+.idea
+.yml
+*.csv
+hogehoge.json
+message.txt
+
