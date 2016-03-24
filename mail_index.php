@@ -78,6 +78,7 @@ $service = new Google_Service_Calendar($client);
 
 //calendar ID setting
 $email_map = array(
+<<<<<<< HEAD
     'tokugami@aucfan.com' => array('name' => '得上竜一', 'user_id' => 10),
     'ida@aucfan.com'           => array('name' => '井田', 'user_id' => 16),
     't_watanabe@aucfan.com'    => array('name' => '渡辺', 'user_id' => 45),
@@ -90,6 +91,17 @@ $email_map = array(
     'fukuda@aucfan.com'     => array('name' => '福田', 'user_id' => 109),
     'ohira@aucfan.com'     => array('name' => '大平', 'user_id' => 112),
     'kyawphyonaing@aucfan.com' => array('name' => 'チョー', 'user_id' => 97),
+=======
+    'tokugami@aucfan.com'        => array('name' => '得上竜一', 'user_id' => 10),
+    'makise@aucfan.com'        => array('name' => '牧瀬', 'user_id' => 88),
+    'ida@aucfan.com'           => array('name' => '井田', 'user_id' => 16),
+    'yotsuya@aucfan.com'       => array('name' => '四谷', 'user_id' => 57),
+    'takaya@aucfan.com'        => array('name' => '高屋', 'user_id' => 95),
+    'che@aucfan.com'           => array('name' => 'チェ', 'user_id' => 67),
+    'tanikado@aucfan.com'      => array('name' => '谷門', 'user_id' => 96),
+    'horikoshi@aucfan.com'     => array('name' => '堀越', 'user_id' => 100),
+    'kyawphyonaing@aucfan.com' => array('name' => 'チョーピョーナイン', 'user_id' => 97),
+>>>>>>> 1a84667417c83d135ae2d1cec1a0f8af0113d9a4
 );
 ///////////////////////////////////////
 
