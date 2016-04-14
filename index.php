@@ -122,10 +122,10 @@ $email_map = array(
     'che@aucfan.com'           => array('name' => 'チェ', 'user_id' => 67),
     'makise@aucfan.com'        => array('name' => '牧瀬', 'user_id' => 88),
     'takaya@aucfan.com'        => array('name' => '高屋', 'user_id' => 95),
-    'tanikado@aucfan.com'      => array('name' => '谷門', 'user_id' => 96),
     'fujinaga@aucfan.com'     => array('name' => '藤永', 'user_id' => 105),
     'fukuda@aucfan.com'     => array('name' => '福田', 'user_id' => 109),
     'ohira@aucfan.com'     => array('name' => '大平', 'user_id' => 112),
+    'tani@aucfan.com'     => array('name' => '谷', 'user_id' => 117),
     'kyawphyonaing@aucfan.com' => array('name' => 'チョー', 'user_id' => 97),
 );
 ///////////////////////////////////////
