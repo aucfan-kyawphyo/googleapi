@@ -121,12 +121,19 @@ $email_map = array(
     'yotsuya@aucfan.com'       => array('name' => '四谷', 'user_id' => 57),
     'che@aucfan.com'           => array('name' => 'チェ', 'user_id' => 67),
     'makise@aucfan.com'        => array('name' => '牧瀬', 'user_id' => 88),
-    'takaya@aucfan.com'        => array('name' => '高屋', 'user_id' => 95),
     'fujinaga@aucfan.com'     => array('name' => '藤永', 'user_id' => 105),
     'fukuda@aucfan.com'     => array('name' => '福田', 'user_id' => 109),
     'ohira@aucfan.com'     => array('name' => '大平', 'user_id' => 112),
     'tani@aucfan.com'     => array('name' => '谷', 'user_id' => 117),
+    'kijima@aucfan.com' => array('name' => '木島', 'user_id' => 130),
     'kyawphyonaing@aucfan.com' => array('name' => 'チョー', 'user_id' => 97),
+    'nishiwaki@aucfan.com' => array('name' => '西脇', 'user_id' => 14),
+    'igarashi@aucfan.com' => array('name' => '五十嵐', 'user_id' => 26),
+    'noguchi@aucfan.com' => array('name' => '野口', 'user_id' => 72),
+    'nuruddin@aucfan.com' => array('name' => 'ジュエル', 'user_id' => 84),
+    'takaki@aucfan.com' => array('name' => '高木', 'user_id' => 56),
+    'ohmi@aucfan.com' => array('name' => '近江', 'user_id' => 118),
+    'kakehi@aucfan.com' => array('name' => '筧', 'user_id' => 98),
 );
 ///////////////////////////////////////
 
@@ -230,7 +237,7 @@ foreach ($email_map as $member) {
     }
   }
 }
-echo "各位\n本日の得上竜一さんと開発Gの作業内容を共有いたします。\n";
+echo "各位\n本日の得上竜一さんとDevOpsの作業内容を共有いたします。\n";
 // Print calendar and redmine
 foreach($email_map as $email => $member) {
   $calendarId = $email;
@@ -325,3 +332,4 @@ foreach($email_map as $email => $member) {
 }
 echo "以上。\n";
 echo "==END==";
+
