@@ -17,7 +17,7 @@ while(true)
         		"0.0.1"
         		]
          	]),
-         	"title" => date("Ymd") . "次営業日の開発G作業予定",
+         	"title" => date("Ymd") . "次営業日のDevOps作業予定",
          	"tweet" => false
         ), JSON_PRETTY_PRINT);
         return;
