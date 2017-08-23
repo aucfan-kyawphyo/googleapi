@@ -1,14 +1,18 @@
 <?php
 
 $email_map = array(
-  'makise@aucfan.com'        => array('name' => '牧瀬', 'user_id' => 88),
-  'ida@aucfan.com'           => array('name' => '井田', 'user_id' => 16),
-  'yotsuya@aucfan.com'       => array('name' => '四谷', 'user_id' => 57),
-  'takaya@aucfan.com'        => array('name' => '高屋', 'user_id' => 95),
-  'che@aucfan.com'           => array('name' => 'チェ', 'user_id' => 67),
-  'tanikado@aucfan.com'      => array('name' => '谷門', 'user_id' => 96),
-  'horikoshi@aucfan.com'     => array('name' => '堀越', 'user_id' => 100),
-  'kyawphyonaing@aucfan.com' => array('name' => 'ちょーぴょー', 'user_id' => 97),
+  'fujinaga@aucfan.com'       => array('name' => '藤永', 'user_id' => 105),
+  'manabe@aucfan.com'         => array('name' => '真鍋', 'user_id' => 36),
+  'makise@aucfan.com'         => array('name' => '牧瀬', 'user_id' => 88),
+  'yotsuya@aucfan.com'        => array('name' => '四谷', 'user_id' => 57),
+  'tani@aucfan.com'           => array('name' => '谷', 'user_id' => 117),
+  'n_tanaka@aucfan.com'       => array('name' => '田中', 'user_id' => 137),
+  'yoriko.yamada@aucfan.com'  => array('name' => '山田', 'user_id' => 154),
+  'nobuyuki.honma@aucfan.com' => array('name' => '本間', 'user_id' => 166),
+  'kyawphyonaing@aucfan.com'  => array('name' => 'チョー', 'user_id' => 97),
+  'kakehi@aucfan.com'         => array('name' => '筧', 'user_id' => 98),
+  'lai@aucfan.com'            => array('name' => 'ライ', 'user_id' => 132),
+  'wu@aucfan.com'             => array('name' => 'ウ', 'user_id' => 138),
 );
 
 
@@ -17,39 +21,6 @@ foreach ($email_map as $member) {
   $name_list[] = $member['name'];
 }
 
-
-// 読み込むファイル名の指定
-$file_name = "./task.csv";
-// ファイルポインタを開く
-$fp = fopen($file_name, 'r');
-
-$next_task = array();
-// データが無くなるまでファイル(CSV)を１行ずつ読み込む
-$key_line_list = array();
-$line_number = 0;
-while ($ret_csv = fgetcsv($fp, 256)) {
-  $line_number++;
-  if (empty($ret_csv[0])) {
-    continue;
-  }
-  // 読み込んだ行(CSV)を表示する
-  if (in_array($ret_csv[0], $name_list)) {
-    $key_line_list[$line_number] = $ret_csv[0];
-  }
-  else {
-    if (empty($key_line_list)) {
-      continue;
-    }
-    $max_line_number = max(array_keys($key_line_list));
-    if (is_bool($max_line_number)) {
-      continue;
-    }
-    $next_task[$key_line_list[$max_line_number]][] = $ret_csv[0] . ' ' .$ret_csv[1] . $ret_csv[2];
-  }
-}
-
-// 開いたファイルポインタを閉じる
-fclose($fp);
 //ライブラリの読み込み
 require_once "./Feed.php";
 
@@ -104,33 +75,21 @@ foreach ($email_map as $member) {
     }
   }
 }
-//var_dump($result);exit;
 foreach ($email_map as $email => $member) {
-  echo '#' . $member['name'] . "\n";
-  echo '本日の作業内容' . "\n";
+  echo '#' . $member['name'] . "\n\n";
+  echo '・本日の作業内容' . "\n\n";
   if (!isset($result[$email])) {
-    echo 'なし' . "\n\n";
+    echo 'なし' . "\n\n\n";
   }
   else {
     $task_list = $result[$email];
     foreach ($task_list as $project_name => $project_list) {
       echo ' ' . $project_name . "\n";
       foreach ($project_list as $task) {
-        echo "  " . $task['title'] . ':' . $task['time'] . "時間\n";
+        echo "  " . $task['title'] . ' : ' . $task['time'] . "時間\n";
         echo "  * " . $task['url'] . "\n";
       }
-      echo "\n";
+      echo "\n\n";
     }
   }
-  echo '明日の作業予定内容' . "\n";
-  if (!isset($next_task[$member['name']])) {
-    echo "未定\n";
-  }
-  else {
-    $task_list = $next_task[$member['name']];
-    foreach ($task_list as $task) {
-      echo " " . $task . "\n";
-    }
-  }
-  echo "\n";
 }
