@@ -190,7 +190,7 @@ foreach ($email_map as $member) {
     }
   }
 }
-echo "各位\n本日の得上竜一さんとDevOpsの作業内容を共有いたします。\n";
+echo "各位\n本日の作業内容を共有いたします。\n";
 // Print calendar and redmine
 foreach($email_map as $email => $member) {
   $calendarId = $email;
