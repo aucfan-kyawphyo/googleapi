@@ -5,7 +5,8 @@ holiday=`wget -q -O - "http://s-proj.com/utils/checkHoliday.php?kind=h&date=${to
 
 # 平日の場合
 if [ $holiday = 'else' ] ; then
-
-php /deploy/googleapi/slackapi/aucmine.php > /deploy/googleapi/slackapi/message.txt 2>> /deploy/googleapi/slackapi/error.log
-
+# aucmine
+#php /deploy/googleapi/slackapi/aucmine.php > /deploy/googleapi/slackapi/message.txt 2>> /deploy/googleapi/slackapi/error.log
+# calendar and aucmine
+php /deploy/googleapi/news.php > /deploy/googleapi/slackapi/message.txt 2>> /deploy/googleapi/slackapi/error.log
 fi
