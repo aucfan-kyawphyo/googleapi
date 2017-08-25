@@ -22,7 +22,7 @@ foreach ($email_map as $member) {
 }
 
 //ライブラリの読み込み
-require_once "./Feed.php";
+require_once "/deploy/googleapi/slackapi/Feed.php";
 
 $target_day = NULL;
 //$target_day = '2015-10-02';
